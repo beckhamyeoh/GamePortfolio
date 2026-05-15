@@ -4,7 +4,7 @@ tagline: "A polished iteration on the classic shoot-'em-up loop with power-ups a
 year: 2024
 tech: ["Unity", "C#"]
 playable: false
-buildPath: "games/space-shmup-2"
+buildPath: "play/space-shmup-2"
 order: 10
 ---
 

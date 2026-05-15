@@ -8,7 +8,8 @@ Live site: <https://beckhamyeoh.github.io/GamePortfolio/>
 
 - [Astro](https://astro.build) static site
 - Game metadata in `src/content/games/*.md`
-- WebGL builds served from `public/games/<slug>/`
+- WebGL builds served from `public/play/<slug>/` (kept separate from the
+  `/games/<slug>/` info-page route to avoid URL collisions)
 - Deployed via GitHub Actions on push to `main`
 
 ## Local development
@@ -30,12 +31,12 @@ npm run preview  # serve the built site locally
    year: 2026
    tech: ["Unity", "C#"]
    playable: false
-   buildPath: "games/<slug>"
+   buildPath: "play/<slug>"
    order: 80
    ---
    ```
 2. (Optional) Build the game's WebGL target from Unity into
-   `public/games/<slug>/`. See `public/games/README.md` for details.
+   `public/play/<slug>/`. See `public/play/README.md` for details.
 3. Flip `playable: true` once the WebGL build is in place.
 
 ## Enabling GitHub Pages

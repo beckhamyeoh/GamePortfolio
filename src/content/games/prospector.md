@@ -4,7 +4,7 @@ tagline: "Solitaire-style card game played against a deck of cards."
 year: 2024
 tech: ["Unity", "C#"]
 playable: false
-buildPath: "games/prospector"
+buildPath: "play/prospector"
 order: 50
 ---
 

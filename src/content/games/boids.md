@@ -4,7 +4,7 @@ tagline: "Flocking simulation using separation, alignment, and cohesion."
 year: 2024
 tech: ["Unity", "C#", "AI"]
 playable: true
-buildPath: "games/boids"
+buildPath: "play/boids"
 order: 70
 ---
 

@@ -4,7 +4,7 @@ tagline: "Original vertical shoot-'em-up — dodge, shoot, survive."
 year: 2024
 tech: ["Unity", "C#"]
 playable: false
-buildPath: "games/space-shmup-1"
+buildPath: "play/space-shmup-1"
 order: 60
 ---
 

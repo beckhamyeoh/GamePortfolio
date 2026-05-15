@@ -3,13 +3,17 @@
 Each game's WebGL build output should be placed in a subfolder matching the
 `buildPath` field in its markdown file under `src/content/games/`.
 
+> Note: builds live under `public/play/<slug>/` (not `public/games/`) so they
+> don't collide with the game **info pages** Astro generates at
+> `/games/<slug>/`.
+
 ## How to build a WebGL game in Unity
 
 1. Open the Unity project (e.g. `~/UnityGames/ApplePicker`).
 2. `File → Build Settings…`
 3. Select **WebGL** as the platform, click **Switch Platform**.
 4. Click **Build**. When asked for an output folder, point it at the matching
-   directory below (e.g. `public/games/apple-picker`).
+   directory below (e.g. `public/play/apple-picker`).
 5. After the build finishes, that folder will contain `index.html`,
    `Build/`, and `TemplateData/`. The site picks it up automatically.
 6. Flip `playable: true` in the corresponding markdown file under
@@ -18,9 +22,9 @@ Each game's WebGL build output should be placed in a subfolder matching the
 ## Expected folder layout
 
 ```
-public/games/
-  apple-picker/      → buildPath: "games/apple-picker"
-  boids/             → buildPath: "games/boids"
+public/play/
+  apple-picker/      → buildPath: "play/apple-picker"
+  boids/             → buildPath: "play/boids"
   mission-demolition/
   prospector/
   prospector-2/

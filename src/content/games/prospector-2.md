@@ -4,7 +4,7 @@ tagline: "Solitaire-style card game extended with scoring, animations, and UI po
 year: 2024
 tech: ["Unity", "C#"]
 playable: false
-buildPath: "games/prospector-2"
+buildPath: "play/prospector-2"
 order: 20
 ---
 

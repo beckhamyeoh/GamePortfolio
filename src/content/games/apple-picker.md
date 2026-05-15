@@ -4,7 +4,7 @@ tagline: "Catch falling apples in a basket — a Unity intro project."
 year: 2024
 tech: ["Unity", "C#"]
 playable: false
-buildPath: "games/apple-picker"
+buildPath: "play/apple-picker"
 order: 30
 ---
 

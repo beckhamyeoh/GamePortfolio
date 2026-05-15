@@ -4,7 +4,7 @@ tagline: "Angry-Birds-style physics game: launch projectiles to topple structure
 year: 2024
 tech: ["Unity", "C#", "Physics"]
 playable: false
-buildPath: "games/mission-demolition"
+buildPath: "play/mission-demolition"
 order: 40
 ---
 
