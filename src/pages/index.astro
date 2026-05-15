@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import GameCard from '../components/GameCard.astro';
+
+const games = (await getCollection('games')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Layout title="Beckham Yeoh — Game Portfolio">
+  <section class="hero">
+    <h1>Game Portfolio</h1>
+    <p class="lede">
+      A collection of small games and prototypes built in Unity. Several are
+      playable directly in the browser via WebGL.
+    </p>
+  </section>
+
+  <section class="grid">
+    {games.map((g) => (
+      <GameCard
+        slug={g.id}
+        title={g.data.title}
+        tagline={g.data.tagline}
+        year={g.data.year}
+        tech={g.data.tech}
+        thumbnail={g.data.thumbnail}
+        playable={g.data.playable}
+      />
+    ))}
+  </section>
+</Layout>
+
+<style>
+  .hero { margin-bottom: 2rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+</style>

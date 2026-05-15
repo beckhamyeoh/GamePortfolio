@@ -1,0 +1,87 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  tagline: string;
+  year?: number;
+  tech?: string[];
+  thumbnail?: string;
+  playable: boolean;
+}
+
+const { slug, title, tagline, year, tech = [], thumbnail, playable } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const href = `${base}/games/${slug}`;
+const thumbSrc = thumbnail ? `${base}/${thumbnail.replace(/^\//, "")}` : null;
+---
+
+<a class="card" href={href}>
+  <div class="thumb">
+    {thumbSrc ? (
+      <img src={thumbSrc} alt={`${title} screenshot`} loading="lazy" />
+    ) : (
+      <div class="thumb-placeholder">{title}</div>
+    )}
+    {playable && <span class="badge">Playable</span>}
+  </div>
+  <div class="body">
+    <h2>{title}</h2>
+    <p class="tagline">{tagline}</p>
+    <div class="meta">
+      {year && <span>{year}</span>}
+      {tech.length > 0 && <span class="tech">{tech.join(" · ")}</span>}
+    </div>
+  </div>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    color: var(--text);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    color: var(--text);
+  }
+  .thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #1f2230;
+    overflow: hidden;
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .badge {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background: var(--accent);
+    color: #0e0f13;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .body { padding: 1rem 1.1rem 1.2rem; }
+  .body h2 { margin: 0 0 0.25rem; font-size: 1.15rem; }
+  .tagline { margin: 0 0 0.6rem; color: var(--text-muted); font-size: 0.95rem; }
+  .meta { color: var(--text-muted); font-size: 0.82rem; display: flex; gap: 0.75rem; }
+</style>
