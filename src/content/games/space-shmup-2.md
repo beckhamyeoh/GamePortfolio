@@ -3,7 +3,7 @@ title: "Space SHMUP 2"
 tagline: "A polished iteration on the classic shoot-'em-up loop with power-ups and bosses."
 year: 2024
 tech: ["Unity", "C#"]
-playable: false
+playable: true
 buildPath: "play/space-shmup-2"
 order: 10
 ---
