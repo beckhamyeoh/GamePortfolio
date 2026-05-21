@@ -1,8 +1,8 @@
 # GamePortfolio
 
-Static site for showcasing Unity games, deployed to GitHub Pages.
+**Live site → <https://beckhamyeoh.github.io/GamePortfolio/>**
 
-Live site: <https://beckhamyeoh.github.io/GamePortfolio/>
+Static site for showcasing Unity games, deployed to GitHub Pages.
 
 ## Stack
 
@@ -38,12 +38,3 @@ npm run preview  # serve the built site locally
 2. (Optional) Build the game's WebGL target from Unity into
    `public/play/<slug>/`. See `public/play/README.md` for details.
 3. Flip `playable: true` once the WebGL build is in place.
-
-## Enabling GitHub Pages
-
-After the first push to `main`:
-
-1. Go to **Settings → Pages** on the GitHub repo.
-2. Under **Build and deployment → Source**, choose **GitHub Actions**.
-3. The first run of the `Deploy to GitHub Pages` workflow will publish the
-   site at the URL above.
