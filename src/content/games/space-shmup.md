@@ -16,3 +16,21 @@ collect stacking power-ups, and take on a multi-phase boss encounter.
 - Power-up pickup system with stacking effects
 - Multiple enemy patterns with pooled spawning
 - Boss fight with phased behavior
+
+## Code highlight
+
+A data-driven weapon system where the spread shot fans three projectiles using
+quaternion rotations. Adding a new weapon is just filling in a
+`WeaponDefinition` in the inspector.
+
+```csharp
+case eWeaponType.spread:
+    MakeProjectile().vel = vel;                                   // center
+    var pL = MakeProjectile();                                    // +10 degrees
+    pL.transform.rotation = Quaternion.AngleAxis(10, Vector3.back);
+    pL.vel = pL.transform.rotation * vel;
+    var pR = MakeProjectile();                                    // -10 degrees
+    pR.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
+    pR.vel = pR.transform.rotation * vel;
+    break;
+```

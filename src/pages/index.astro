@@ -12,8 +12,12 @@ const games = (await getCollection('games')).sort(
   <section class="hero">
     <h1>Game Portfolio</h1>
     <p class="lede">
-      A collection of small games and prototypes built in Unity.
+      I'm a third-year Computer Science student at UC San Diego interested in
+      gameplay programming. I love turning a design idea into something you can
+      pick up and play — channeling my passion for playing games into making
+      them.
     </p>
+    <p class="sub">A collection of small games and prototypes built in Unity.</p>
   </section>
 
   <section class="grid">
@@ -33,6 +37,7 @@ const games = (await getCollection('games')).sort(
 
 <style>
   .hero { margin-bottom: 2rem; }
+  .hero .sub { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.75rem; }
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
