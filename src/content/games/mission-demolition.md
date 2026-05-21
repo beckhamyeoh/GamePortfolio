@@ -1,6 +1,7 @@
 ---
 title: "Mission Demolition"
 tagline: "Angry-Birds-style physics game: launch projectiles to topple structures."
+thumbnail: "screenshots/mission-demolition.png"
 year: 2024
 tech: ["Unity", "C#", "Physics"]
 playable: true

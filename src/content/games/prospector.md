@@ -1,6 +1,7 @@
 ---
 title: "Prospector"
 tagline: "Solitaire-style card game with scoring, animations, and a polished UI."
+thumbnail: "screenshots/prospector.png"
 year: 2024
 tech: ["Unity", "C#"]
 playable: true

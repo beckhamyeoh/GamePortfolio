@@ -1,6 +1,7 @@
 ---
 title: "Space SHMUP"
 tagline: "Vertical shoot-'em-up with power-ups, enemy variety, and a boss fight."
+thumbnail: "screenshots/space-shmup.png"
 year: 2024
 tech: ["Unity", "C#"]
 playable: true

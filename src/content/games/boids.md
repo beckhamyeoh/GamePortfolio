@@ -1,6 +1,7 @@
 ---
 title: "Boids"
 tagline: "Flocking simulation using separation, alignment, and cohesion."
+thumbnail: "screenshots/boids.png"
 year: 2024
 tech: ["Unity", "C#", "AI"]
 playable: true
