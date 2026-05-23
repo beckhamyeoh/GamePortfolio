@@ -1,11 +1,40 @@
 ---
 import { getCollection } from 'astro:content';
+import { Code } from 'astro:components';
 import Layout from '../layouts/Layout.astro';
 import GameCard from '../components/GameCard.astro';
 
 const games = (await getCollection('games')).sort(
   (a, b) => a.data.order - b.data.order,
 );
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const roverSnippet = `void loop() {
+  float dist = getSonar();                  // distance ahead, in cm
+
+  if (dist > 25 || dist == 0) {             // path clear -> drive forward
+    digitalWrite(AIN1, HIGH); digitalWrite(AIN2, LOW);
+    digitalWrite(BIN1, HIGH); digitalWrite(BIN2, LOW);
+  } else {                                  // obstacle detected -> reverse
+    digitalWrite(AIN1, LOW); digitalWrite(AIN2, HIGH);
+    digitalWrite(BIN1, LOW); digitalWrite(BIN2, HIGH);
+    delay(800);
+
+    // randomly pick a turn direction, lighting the matching LED
+    if (random(0, 2) == 0) digitalWrite(LED_RIGHT, HIGH);  // turn right
+    else                   digitalWrite(LED_LEFT,  HIGH);  // turn left
+  }
+}
+
+// fire a 10us trigger pulse, time the echo, convert to centimeters
+float getSonar() {
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  unsigned long pingTime = pulseIn(echoPin, HIGH, timeOut);
+  return (float)pingTime * soundVelocity / 2 / 10000;
+}`;
 ---
 
 <Layout title="Beckham Yeoh — Game Portfolio">
@@ -33,6 +62,38 @@ const games = (await getCollection('games')).sort(
       />
     ))}
   </section>
+
+  <section class="other">
+    <h2>Other Work</h2>
+    <div class="work-item">
+      <div class="work-media">
+        <video
+          src={`${base}/videos/rover.mp4`}
+          controls
+          preload="metadata"
+          playsinline
+        ></video>
+      </div>
+      <div class="work-body">
+        <h3>Arduino Obstacle-Avoidance Rover</h3>
+        <p class="work-tech">C++ · ESP32 · HC-SR04 ultrasonic sensor</p>
+        <p>
+          An autonomous rover that drives forward until its ultrasonic sensor
+          detects an obstacle within 25&nbsp;cm, then stops, reverses, and
+          randomly turns left or right to find a clear path. Onboard LEDs signal
+          each maneuver.
+        </p>
+        <Code code={roverSnippet} lang="cpp" />
+        <p>
+          <a
+            href="https://github.com/beckhamyeoh/GamePortfolio/blob/main/arduino/obstacle-rover.ino"
+            target="_blank"
+            rel="noopener"
+          >Full sketch on GitHub →</a>
+        </p>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -42,5 +103,38 @@ const games = (await getCollection('games')).sort(
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.25rem;
+  }
+  .other {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .other h2 { margin: 0 0 1.5rem; }
+  .work-item {
+    display: grid;
+    grid-template-columns: minmax(0, 380px) 1fr;
+    gap: 1.75rem;
+    align-items: start;
+  }
+  .work-media video {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    display: block;
+    background: #000;
+  }
+  .work-body h3 { margin: 0 0 0.25rem; }
+  .work-tech { color: var(--text-muted); font-size: 0.85rem; margin: 0 0 0.75rem; }
+  .work-body :global(pre) {
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow-x: auto;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin: 1rem 0;
+  }
+  @media (max-width: 720px) {
+    .work-item { grid-template-columns: 1fr; }
   }
 </style>
