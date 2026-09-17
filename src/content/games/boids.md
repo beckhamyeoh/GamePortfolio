@@ -3,15 +3,14 @@ title: "Boids"
 tagline: "Flocking simulation using separation, alignment, and cohesion."
 thumbnail: "screenshots/boids.png"
 year: 2024
-tech: ["Unity", "C#", "AI"]
+tech: ["Unity", "C#"]
 playable: true
 buildPath: "play/boids"
 order: 70
 ---
 
-A flocking simulation that implements the classic boids algorithm —
-separation, alignment, and cohesion — to produce emergent group behavior in
-real time.
+A flocking simulation that implements the classic boids algorithm (separation,
+alignment, and cohesion) to produce emergent group behavior in real time.
 
 ## Code highlight
 

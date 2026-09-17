@@ -1,6 +1,6 @@
 ---
 title: "Apple Picker"
-tagline: "Catch falling apples in a basket — a Unity intro project."
+tagline: "Catch falling apples in a basket. A Unity intro project."
 thumbnail: "screenshots/apple-picker.png"
 year: 2024
 tech: ["Unity", "C#"]

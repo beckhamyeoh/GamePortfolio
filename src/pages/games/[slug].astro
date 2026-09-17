@@ -18,7 +18,7 @@ const buildHref = game.data.buildPath
   : null;
 ---
 
-<Layout title={`${game.data.title} — Beckham Yeoh`} description={game.data.tagline}>
+<Layout title={`${game.data.title} · Beckham Yeoh`} description={game.data.tagline}>
   <a class="back" href={base || "/"}>← All games</a>
   <header class="game-header">
     <h1>{game.data.title}</h1>
@@ -35,7 +35,7 @@ const buildHref = game.data.buildPath
     <div class="webgl-wrap">
       <iframe
         src={buildHref}
-        title={`${game.data.title} — WebGL`}
+        title={`${game.data.title} WebGL build`}
         allow="autoplay; fullscreen; gamepad"
         allowfullscreen
         loading="lazy"
