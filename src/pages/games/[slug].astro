@@ -24,7 +24,6 @@ const buildHref = game.data.buildPath
     <h1>{game.data.title}</h1>
     <p class="lede">{game.data.tagline}</p>
     <div class="meta">
-      {game.data.year && <span>{game.data.year}</span>}
       {game.data.tech.length > 0 && <span>{game.data.tech.join(" · ")}</span>}
       {game.data.repo && (
         <a href={game.data.repo} target="_blank" rel="noopener">Source ↗</a>

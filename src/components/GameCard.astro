@@ -28,7 +28,6 @@ const thumbSrc = thumbnail ? `${base}/${thumbnail.replace(/^\//, "")}` : null;
     <h2>{title}</h2>
     <p class="tagline">{tagline}</p>
     <div class="meta">
-      {year && <span>{year}</span>}
       {tech.length > 0 && <span class="tech">{tech.join(" · ")}</span>}
     </div>
   </div>
