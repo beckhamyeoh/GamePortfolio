@@ -9,10 +9,10 @@ repo: "https://github.com/beckhamyeoh/boss-jam"
 order: 5
 ---
 
-A single boss fight built in a week for Boss Fight Jam, working with one partner.
 Your party is dead and your quiver is nearly empty, so every arrow you fire is one
 you have to walk back out and pick up while the boss hunts you.
 
+A single boss fight built in a week for Boss Fight Jam, working with one partner.
 It placed **5th of 18 overall**, **3rd in Game Design** and **4th in Fun**. Also on
 [itch.io](https://attempt1.itch.io/ophirs-revenge).
 
@@ -29,8 +29,11 @@ It placed **5th of 18 overall**, **3rd in Game Design** and **4th in Fun**. Also
 
 ## My contributions
 
-Player controller, bow and ammo systems, snare, HUD, game flow and screens, audio,
-and the phase 2 lightning effect. My partner built the boss AI and arena.
+Player controller, bow and ammo systems, the snare, HUD and boss health bar, game
+flow and end screens, audio, and the phase 2 lightning that burns away the party.
+My partner built the boss: its animations, attack state machine and lightning
+hitboxes, plus the camera shake, screen bounds and the fallen party. We split the
+arena between us.
 
 ## Code highlight
 
