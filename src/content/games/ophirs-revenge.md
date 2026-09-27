@@ -39,6 +39,12 @@ faster and harder the arrow. Drawing roots the player in place, so a full-power 
 means standing still while the boss closes in. I also added death with an instant
 retry, since a hard boss fight only works if trying again costs nothing.
 
+**From shapes to a game (days 4–5).** I replaced the placeholder square with an animated
+archer who turns to face wherever you aim, drew the arrow sprite myself, and added a HUD
+and a red screen flash when you take a hit. I also turned the player and UI into
+prefabs, so my partner and I could both work in the arena scene without overwriting
+each other's changes.
+
 **The fight was too easy (days 6–7).** Aiming with a mouse is easy, so I almost never
 lost an arrow. I cut the starting count from 5 to 3 and the maximum from 12 to 6, and
 changed pickups from walking over them to holding a key for half a second, so
