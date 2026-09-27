@@ -34,6 +34,13 @@ and a training dummy in place of a boss, but it already had movement, a dodge, a
 an ammo count and a snare. Arrows that hit the dummy dropped pickups, so the core idea,
 that you have to recover your own ammo, could be tested before any art existed.
 
+<figure>
+  <img src="/GamePortfolio/screenshots/ophirs-revenge-prototype.png"
+       alt="The prototype: a black square for the player and a white circle for the boss against Unity's default sky"
+       loading="lazy" />
+  <figcaption>The prototype on day 3: a black square for the player, a white circle for the boss, and Unity's default sky.</figcaption>
+</figure>
+
 **Making every shot a decision (day 3).** I added bow charging: the longer you draw, the
 faster and harder the arrow. Drawing roots the player in place, so a full-power shot
 means standing still while the boss closes in. I also added death with an instant
