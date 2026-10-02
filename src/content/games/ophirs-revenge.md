@@ -5,6 +5,8 @@ thumbnail: "screenshots/ophirs-revenge.png"
 tech: ["Unity", "C#"]
 playable: true
 buildPath: "play/ophirs-revenge"
+video: "videos/ophirs-revenge.mp4"
+videoPoster: "videos/ophirs-revenge-poster.jpg"
 repo: "https://github.com/beckhamyeoh/boss-jam"
 order: 5
 ---

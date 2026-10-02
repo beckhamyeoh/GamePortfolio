@@ -11,6 +11,8 @@ const games = defineCollection({
     thumbnail: z.string().optional(),
     playable: z.boolean().default(false),
     buildPath: z.string().optional(),
+    video: z.string().optional(),
+    videoPoster: z.string().optional(),
     repo: z.string().url().optional(),
     order: z.number().default(100),
   }),

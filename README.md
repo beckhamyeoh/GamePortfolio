@@ -54,6 +54,8 @@ npm run preview  # serve the built site locally
    tech: ["Unity", "C#"]
    playable: false
    buildPath: "play/<slug>"
+   video: "videos/<slug>.mp4"                # optional: gameplay clip shown above the game
+   videoPoster: "videos/<slug>-poster.jpg"   # optional: still frame shown before it plays
    repo: "https://github.com/beckhamyeoh/<repo>"
    order: 80
    ---
